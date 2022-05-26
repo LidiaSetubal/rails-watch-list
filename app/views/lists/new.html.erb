@@ -1,0 +1,7 @@
+<h1>Create a new list</h1>
+
+<%= simple_form_for [ @list ] do |f| %>
+  <%= f.input :name %>
+  <%= f.submit "Add list", class: "btn btn-primary" %>
+<% end %>
+<%= link_to "↩️ Back", lists_path, class: 'btn btn-danger' %>
