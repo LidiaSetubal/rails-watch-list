@@ -11,6 +11,11 @@ gem "simple_form", github: "heartcombo/simple_form"
 # Gemfile
 gem 'dotenv-rails', groups: [:development, :test]
 
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+
+# Gemfile
+gem 'cloudinary', '~> 1.16.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.6'
 # Use postgresql as the database for Active Record

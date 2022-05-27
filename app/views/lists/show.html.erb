@@ -1,5 +1,32 @@
-<br>
+<p id="notice"><%= notice %></p>
 
-<h1><%= @list.name %></h1>
+<h2>
+  <strong>Name:</strong>
+  <%= @list.name %>
+</h2>
 
-<%= link_to 'Add a movie', new_list_bookmark_path(@list) %>
+<table class='table'>
+
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bookmarks.each do |bookmark| %>
+      <% @movies.each do |movie| %>
+        <tr>
+          <td><%= movie.title %></td>
+          <td><%= movie.overview %></td>
+          <td><%= movie.rating %></td>
+          <td><%= bookmark.comment %> <%= link_to 'Delete bookmark', bookmark_path(bookmark), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
+<%= link_to 'Add bookmark', new_list_bookmark_path(@list) %>
+<%= link_to 'Back', lists_path %>
