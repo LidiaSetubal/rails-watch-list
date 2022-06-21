@@ -1,7 +1,7 @@
 <div class="container">
 <p id="notice"><%= notice %></p>
 
-<h1>Lists</h1>
+<h1 class="mt-5">Lista</h1>
 
 <table class='table'>
   <thead>
@@ -15,7 +15,9 @@
       <tr>
         <td><%= link_to list.name, list_path(list) %></td>
       </tr>
-      <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
+      <div class="image-home my-5">
+      <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %> 
+      </div>
     <% end %>
   </tbody>
 </table>
